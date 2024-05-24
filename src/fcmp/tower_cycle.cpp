@@ -52,7 +52,6 @@ Helios::Point Helios::hash_grow(
     const Helios::Chunk &new_children) const
 {
     auto res = fcmp_rust::hash_grow_helios(
-        &m_generators,
         existing_hash,
         offset,
         prior_children,
@@ -70,7 +69,6 @@ Selene::Point Selene::hash_grow(
     const Selene::Chunk &new_children) const
 {
     auto res = fcmp_rust::hash_grow_selene(
-        &m_generators,
         existing_hash,
         offset,
         prior_children,
@@ -149,26 +147,6 @@ std::string Selene::to_string(const typename Selene::Point &point) const
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 // Exposed helper functions
-//----------------------------------------------------------------------------------------------------------------------
-Helios::Generators random_helios_generators(std::size_t n)
-{
-    return fcmp_rust::random_helios_generators(n);
-}
-//----------------------------------------------------------------------------------------------------------------------
-Selene::Generators random_selene_generators(std::size_t n)
-{
-    return fcmp_rust::random_selene_generators(n);
-}
-//----------------------------------------------------------------------------------------------------------------------
-Helios::Point random_helios_hash_init_point()
-{
-    return fcmp_rust::random_helios_hash_init_point();
-}
-//----------------------------------------------------------------------------------------------------------------------
-Selene::Point random_selene_hash_init_point()
-{
-    return fcmp_rust::random_selene_hash_init_point();
-}
 //----------------------------------------------------------------------------------------------------------------------
 SeleneScalar ed_25519_point_to_scalar(const crypto::ec_point &point)
 {

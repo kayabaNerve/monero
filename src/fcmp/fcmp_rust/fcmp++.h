@@ -72,16 +72,9 @@ struct SelenePoint {
 
 // ----- End deps C bindings -----
 
-template<typename T = void>
-struct Box;
+constexpr static const uintptr_t HELIOS_GENERATORS_LENGTH = 128;
 
-struct HeliosGenerators {
-  void* generators;
-};
-
-struct SeleneGenerators {
-  void* generators;
-};
+constexpr static const uintptr_t SELENE_GENERATORS_LENGTH = 256;
 
 template<typename T>
 struct CResult {
@@ -100,14 +93,9 @@ using HeliosScalarSlice = Slice<HeliosScalar>;
 using SeleneScalarSlice = Slice<SeleneScalar>;
 
 extern "C" {
+HeliosPoint helios_hash_init_point();
 
-HeliosGenerators random_helios_generators(uintptr_t n);
-
-SeleneGenerators random_selene_generators(uintptr_t n);
-
-HeliosPoint random_helios_hash_init_point();
-
-SelenePoint random_selene_hash_init_point();
+SelenePoint selene_hash_init_point();
 
 uint8_t *helios_scalar_to_bytes(HeliosScalar helios_scalar);
 
@@ -127,14 +115,12 @@ HeliosScalar helios_zero_scalar();
 
 SeleneScalar selene_zero_scalar();
 
-CResult<HeliosPoint> hash_grow_helios(const HeliosGenerators *helios_generators,
-                                             HeliosPoint existing_hash,
+CResult<HeliosPoint> hash_grow_helios(HeliosPoint existing_hash,
                                              uintptr_t offset,
                                              HeliosScalarSlice prior_children,
                                              HeliosScalarSlice new_children);
 
-CResult<SelenePoint> hash_grow_selene(const SeleneGenerators *selene_generators,
-                                             SelenePoint existing_hash,
+CResult<SelenePoint> hash_grow_selene(SelenePoint existing_hash,
                                              uintptr_t offset,
                                              SeleneScalarSlice prior_children,
                                              SeleneScalarSlice new_children);
