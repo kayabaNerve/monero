@@ -72,9 +72,8 @@ struct SelenePoint {
 
 // ----- End deps C bindings -----
 
-template<typename T>
 struct CResult {
-  T* value;
+  void* value;
   void* err;
 };
 
@@ -111,12 +110,12 @@ HeliosScalar helios_zero_scalar();
 
 SeleneScalar selene_zero_scalar();
 
-CResult<HeliosPoint> hash_grow_helios(HeliosPoint existing_hash,
+CResult hash_grow_helios(HeliosPoint existing_hash,
                                              uintptr_t offset,
                                              HeliosScalar first_child_after_offset,
                                              HeliosScalarSlice new_children);
 
-CResult<SelenePoint> hash_grow_selene(SelenePoint existing_hash,
+CResult hash_grow_selene(SelenePoint existing_hash,
                                              uintptr_t offset,
                                              SeleneScalar first_child_after_offset,
                                              SeleneScalarSlice new_children);
