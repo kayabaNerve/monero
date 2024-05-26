@@ -191,3 +191,7 @@ pub extern "C" fn hash_grow_selene(
         CResult::err(())
     }
 }
+
+// https://github.com/rust-lang/rust/issues/79609
+#[no_mangle]
+pub extern "C" fn _Unwind_Resume() {}
