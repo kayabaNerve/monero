@@ -71,7 +71,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "ciphersuite"
 version = "0.4.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "blake2",
  "dalek-ff-group",
@@ -161,7 +161,7 @@ dependencies = [
 [[package]]
 name = "dalek-ff-group"
 version = "0.4.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "crypto-bigint",
  "curve25519-dalek",
@@ -198,7 +198,7 @@ dependencies = [
 [[package]]
 name = "ec-divisors"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "dalek-ff-group",
  "group",
@@ -272,7 +272,7 @@ checksum = "28dea519a9695b9977216879a3ebfddf92f1c08c05d984f8996aecd6ecdc811d"
 [[package]]
 name = "flexible-transcript"
 version = "0.3.2"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "blake2",
  "digest",
@@ -285,7 +285,7 @@ dependencies = [
 [[package]]
 name = "full-chain-membership-proofs"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "ciphersuite",
  "ec-divisors",
@@ -305,7 +305,7 @@ checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
 [[package]]
 name = "generalized-bulletproofs"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "ciphersuite",
  "flexible-transcript",
@@ -368,7 +368,7 @@ dependencies = [
 [[package]]
 name = "helioselene"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "crypto-bigint",
  "dalek-ff-group",
@@ -429,7 +429,7 @@ dependencies = [
 [[package]]
 name = "minimal-ed448"
 version = "0.4.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "crypto-bigint",
  "ff",
@@ -444,7 +444,7 @@ dependencies = [
 [[package]]
 name = "multiexp"
 version = "0.4.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "ff",
  "group",
@@ -498,9 +498,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.83"
+version = "1.0.84"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b33eb56c327dec362a9e55b3ad14f9d2f0904fb5a5b03b513ab5465399e9f43"
+checksum = "ec96c6a92621310b51366f1e28d05ef11489516e93be030060e5fc12024a49d6"
 dependencies = [
  "unicode-ident",
 ]
@@ -613,7 +613,7 @@ dependencies = [
 [[package]]
 name = "std-shims"
 version = "0.1.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#a11db094aac0384b9e62930f6f9f0d062d436897"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
 dependencies = [
  "hashbrown",
  "spin",
@@ -697,9 +697,9 @@ dependencies = [
 
 [[package]]
 name = "zeroize"
-version = "1.7.0"
+version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "525b4ec142c6b68a2d10f01f7bbf6755599ca3f81ea53b8431b7dd348f5fdb2d"
+checksum = "ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde"
 dependencies = [
  "zeroize_derive",
 ]
