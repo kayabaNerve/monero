@@ -1,4 +1,4 @@
-use std::{io, sync::OnceLock};
+use std_shims::sync::OnceLock;
 
 use rand_core::OsRng;
 
@@ -154,7 +154,7 @@ pub extern "C" fn hash_grow_helios(
     offset: usize,
     first_child_after_offset: HeliosScalar,
     new_children: HeliosScalarSlice,
-) -> CResult<HeliosPoint, io::Error> {
+) -> CResult<HeliosPoint, ()> {
     let hash = hash_grow(
         helios_generators(),
         existing_hash,
@@ -166,7 +166,7 @@ pub extern "C" fn hash_grow_helios(
     if let Some(hash) = hash {
         CResult::ok(hash)
     } else {
-        CResult::err(io::Error::new(io::ErrorKind::Other, "failed to grow hash"))
+        CResult::err(())
     }
 }
 
@@ -176,7 +176,7 @@ pub extern "C" fn hash_grow_selene(
     offset: usize,
     first_child_after_offset: SeleneScalar,
     new_children: SeleneScalarSlice,
-) -> CResult<SelenePoint, io::Error> {
+) -> CResult<SelenePoint, ()> {
     let hash = hash_grow(
         selene_generators(),
         existing_hash,
@@ -188,6 +188,6 @@ pub extern "C" fn hash_grow_selene(
     if let Some(hash) = hash {
         CResult::ok(hash)
     } else {
-        CResult::err(io::Error::new(io::ErrorKind::Other, "failed to grow hash"))
+        CResult::err(())
     }
 }
