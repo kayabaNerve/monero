@@ -71,7 +71,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "ciphersuite"
 version = "0.4.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "blake2",
  "dalek-ff-group",
@@ -161,7 +161,7 @@ dependencies = [
 [[package]]
 name = "dalek-ff-group"
 version = "0.4.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "crypto-bigint",
  "curve25519-dalek",
@@ -198,7 +198,7 @@ dependencies = [
 [[package]]
 name = "ec-divisors"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "dalek-ff-group",
  "group",
@@ -272,7 +272,7 @@ checksum = "28dea519a9695b9977216879a3ebfddf92f1c08c05d984f8996aecd6ecdc811d"
 [[package]]
 name = "flexible-transcript"
 version = "0.3.2"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "blake2",
  "digest",
@@ -285,7 +285,7 @@ dependencies = [
 [[package]]
 name = "full-chain-membership-proofs"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "ciphersuite",
  "ec-divisors",
@@ -305,7 +305,7 @@ checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
 [[package]]
 name = "generalized-bulletproofs"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "ciphersuite",
  "flexible-transcript",
@@ -368,7 +368,7 @@ dependencies = [
 [[package]]
 name = "helioselene"
 version = "0.1.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "crypto-bigint",
  "dalek-ff-group",
@@ -429,7 +429,7 @@ dependencies = [
 [[package]]
 name = "minimal-ed448"
 version = "0.4.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "crypto-bigint",
  "ff",
@@ -444,7 +444,7 @@ dependencies = [
 [[package]]
 name = "multiexp"
 version = "0.4.0"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "ff",
  "group",
@@ -613,7 +613,7 @@ dependencies = [
 [[package]]
 name = "std-shims"
 version = "0.1.1"
-source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#534b837ef5fd8e3243166d0616b86bd9e67716d9"
+source = "git+https://github.com/kayabaNerve/fcmp-plus-plus#c07d9cf1eb3f7891ce9c06af0bae918d9c2ea94f"
 dependencies = [
  "hashbrown",
  "spin",
