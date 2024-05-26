@@ -184,7 +184,7 @@ static void hash_layer(const C &curve,
         const auto chunk_start = child_scalars.data() + chunk_start_idx;
         const typename C::Chunk chunk{chunk_start, chunk_size};
 
-        for (uint c = 0; c < chunk_size; ++c) {
+        for (size_t c = 0; c < chunk_size; ++c) {
             MDEBUG("Hashing " << curve.to_string(chunk_start[c]));
         }
 
