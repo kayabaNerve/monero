@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2023, The Monero Project
+# Copyright (c) 2024, The Monero Project
 #
 # All rights reserved.
 #
@@ -26,29 +26,32 @@
 # STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-set(blockchain_db_sources
-  blockchain_db.cpp
-  lmdb/db_lmdb.cpp
-  )
+set(fcmp_sources
+  curve_trees.cpp
+  tower_cycle.cpp)
 
-set(blockchain_db_headers)
+monero_find_all_headers(fcmp_headers "${CMAKE_CURRENT_SOURCE_DIR}")
 
-monero_find_all_headers(blockchain_db_private_headers "${CMAKE_CURRENT_SOURCE_DIR}")
+add_subdirectory(fcmp_rust)
 
-monero_private_headers(blockchain_db
-  ${crypto_private_headers})
-monero_add_library(blockchain_db
-  ${blockchain_db_sources}
-  ${blockchain_db_headers}
-  ${blockchain_db_private_headers})
-target_link_libraries(blockchain_db
+monero_add_library_with_deps(
+  NAME fcmp
+  DEPENDS fcmp_rust
+  SOURCES
+    ${fcmp_sources}
+    ${fcmp_headers})
+
+if(WIN32)
+  set(EXTRA_RUST_LIBRARIES ws2_32 ntdll userenv)
+else()
+  set(EXTRA_RUST_LIBRARIES )
+endif()
+
+target_link_libraries(fcmp
   PUBLIC
-    common
-    cncrypto
-    fcmp
-    ringct
-    ${LMDB_LIBRARY}
-    ${Boost_FILESYSTEM_LIBRARY}
-    ${Boost_THREAD_LIBRARY}
+    crypto
+    epee
   PRIVATE
-    ${EXTRA_LIBRARIES})
+    ${CMAKE_CURRENT_BINARY_DIR}/fcmp_rust/libfcmp_rust.a
+    ${EXTRA_LIBRARIES}
+    ${EXTRA_RUST_LIBRARIES})

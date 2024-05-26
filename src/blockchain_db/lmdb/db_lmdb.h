@@ -64,6 +64,9 @@ typedef struct mdb_txn_cursors
 
   MDB_cursor *m_txc_spent_keys;
 
+  MDB_cursor *m_txc_leaves;
+  MDB_cursor *m_txc_layers;
+
   MDB_cursor *m_txc_txpool_meta;
   MDB_cursor *m_txc_txpool_blob;
 
@@ -87,6 +90,8 @@ typedef struct mdb_txn_cursors
 #define m_cur_tx_indices	m_cursors->m_txc_tx_indices
 #define m_cur_tx_outputs	m_cursors->m_txc_tx_outputs
 #define m_cur_spent_keys	m_cursors->m_txc_spent_keys
+#define m_cur_leaves		m_cursors->m_txc_leaves
+#define m_cur_layers		m_cursors->m_txc_layers
 #define m_cur_txpool_meta	m_cursors->m_txc_txpool_meta
 #define m_cur_txpool_blob	m_cursors->m_txc_txpool_blob
 #define m_cur_alt_blocks	m_cursors->m_txc_alt_blocks
@@ -109,6 +114,8 @@ typedef struct mdb_rflags
   bool m_rf_tx_indices;
   bool m_rf_tx_outputs;
   bool m_rf_spent_keys;
+  bool m_rf_leaves;
+  bool m_rf_layers;
   bool m_rf_txpool_meta;
   bool m_rf_txpool_blob;
   bool m_rf_alt_blocks;
@@ -360,6 +367,10 @@ public:
   static int compare_hash32(const MDB_val *a, const MDB_val *b);
   static int compare_string(const MDB_val *a, const MDB_val *b);
 
+  // make private
+  virtual void grow_tree(const fcmp::curve_trees::CurveTreesV1 &curve_trees,
+    const std::vector<fcmp::curve_trees::CurveTreesV1::LeafTuple> &new_leaves);
+
 private:
   void do_resize(uint64_t size_increase=0);
 
@@ -402,6 +413,12 @@ private:
   virtual void add_spent_key(const crypto::key_image& k_image);
 
   virtual void remove_spent_key(const crypto::key_image& k_image);
+
+  template<typename C>
+  void grow_layer(const std::vector<fcmp::curve_trees::LayerExtension<C>> &layer_extensions,
+    const std::size_t c_idx,
+    const std::size_t layer_idx,
+    const fcmp::curve_trees::LastChunkData<C> *last_chunk_data);
 
   uint64_t num_outputs() const;
 
@@ -466,6 +483,9 @@ private:
   MDB_dbi m_output_amounts;
 
   MDB_dbi m_spent_keys;
+
+  MDB_dbi m_leaves;
+  MDB_dbi m_layers;
 
   MDB_dbi m_txpool_meta;
   MDB_dbi m_txpool_blob;
